@@ -8,7 +8,7 @@
   </a>
 </p>
 
-> This is a collection of Kubernetes OICD yaml files and tutorials that are tested to work with Platform9 Free Tier Kubernetes
+> This is a collection of Kubernetes OIDC yaml files and tutorials that are tested to work with Platform9 Free Tier Kubernetes
 
 ## Author
 
