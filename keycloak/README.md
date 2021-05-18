@@ -89,7 +89,7 @@ Please change the default section to reflect the keystore.jks generated along wi
 `
 <server-identities>
                 <ssl>
-                    <keystore path="keystore.jks" relative-to="jboss.server.config.dir" keystore-password="keystore" alias="unknown" key-password="keystore"/>
+                    <keystore path="keystore.jks" relative-to="jboss.server.config.dir" keystore-password="keystore" alias="localhost" key-password="keystore"/>
                 </ssl>
 </server-identities>
 `
@@ -398,12 +398,16 @@ Run the following command to ensure that OIDC authentication via KeyCloak is suc
 
 ```bash
 ./kubectl-oidc_login setup   --oidc-issuer-url=https://<keycloak-interface_IP>:8443/auth/realms/<realm_name>   --oidc-client-id=<client_ID>   --oidc-client-secret=<secret noted earlier in Keycloak>--insecure-skip-tls-verify --grant-type password
+
 ```
 
 If you are following the values in this example, the above command would look like 
 
 ```bash
 ./kubectl-oidc_login setup   --oidc-issuer-url=https://<keycloak-interface_IP>:8443/auth/realms/master   --oidc-client-id=kubernetes   --oidc-client-secret=<secret noted earlier in Keycloak>--insecure-skip-tls-verify --grant-type password
+
+E.g
+./kubectl-oidc_login setup   --oidc-issuer-url=https://10.128.240.181:8443/auth/realms/master --oidc-client-id=kubernetes   --oidc-client-secret=1db1389d-2c41-4c26-9fe9-48058ab2149d --insecure-skip-tls-verify --grant-type password
 ```
 
 You would get a set of instructions once the authentication is successful which includes Creating a cluster role, setting up API server flags, etc.  Below is an example - 
